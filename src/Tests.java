@@ -62,4 +62,21 @@ private Regular_Expression reg;
         Assert.assertFalse(reg.url_Check("http://asd_sdas.com"));
         Assert.assertFalse(reg.url_Check("http://adsa dsa.com"));
     }
+    @Test
+    public void passwrd()
+    {
+        Assert.assertTrue(reg.pass_is_diff("C00l_Pass"));
+        Assert.assertTrue(reg.pass_is_diff("SupperStas228"));
+        Assert.assertTrue(reg.pass_is_diff("NukutaSheshin1love"));
+        Assert.assertTrue(reg.pass_is_diff("NastyaMohova2love"));
+        Assert.assertTrue(reg.pass_is_diff("Nadejda_Vladimirovna_B3st"));
+        Assert.assertTrue(reg.pass_is_diff("plsHelps0me0ne"));
+
+        Assert.assertFalse(reg.pass_is_diff("C00l_ps"));
+        Assert.assertFalse(reg.pass_is_diff("C00L_PASS"));
+        Assert.assertFalse(reg.pass_is_diff("sadsa2323112321"));
+        Assert.assertFalse(reg.pass_is_diff("SimpleCode"));
+        Assert.assertFalse(reg.pass_is_diff("C00L_PASS210321"));
+        Assert.assertFalse(reg.pass_is_diff("chtobiewepridumat'?????"));
+    }
 }
