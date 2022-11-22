@@ -28,4 +28,21 @@ private Regular_Expression reg;
         Assert.assertFalse(reg.ip_Check("127.1.1.2532"));
         Assert.assertFalse(reg.ip_Check("1290.12.12.255"));
     }
+    @Test
+    public void Guid()
+    {
+        Assert.assertTrue(reg.GUID_Check("e02fd0e4-00fd-090A-ca30-0d00a0038ba0"));
+        Assert.assertTrue(reg.GUID_Check("e02fABCD-00f1-0903-7830-0d00a0038bA0"));
+        Assert.assertTrue(reg.GUID_Check("F23d0e41-f04d-BcBA-ca30-0d00a0038ba0"));
+        Assert.assertTrue(reg.GUID_Check("e02fd0e4-00fd-090A-ca30-0d00a0038ba0"));
+        Assert.assertTrue(reg.GUID_Check("e02fd0e4-00fd-090A-abcd-0d00a0038ba0"));
+        Assert.assertTrue(reg.GUID_Check("e02fd0e4-120f-090A-ca30-0d00a0038ba0"));
+
+        Assert.assertFalse(reg.GUID_Check("----"));
+        Assert.assertFalse(reg.GUID_Check("TT2fd0e4-00fd-090A-ca30-0d00a0038ba0"));
+        Assert.assertFalse(reg.GUID_Check("e02fd0e41-00fd-090A-ca30-0d00a0038ba0"));
+        Assert.assertFalse(reg.GUID_Check("e02fd0e4-020fd-090A-ca30-0d00a0038ba0"));
+        Assert.assertFalse(reg.GUID_Check("e02fd0e4-00fd-0930A-ca30-0d00a0038ba0"));
+        Assert.assertFalse(reg.GUID_Check("e02fd0e4-00fd-090A-ca430-0d00a02038ba0"));
+    }
 }
