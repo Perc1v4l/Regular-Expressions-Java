@@ -9,4 +9,10 @@ public class Regular_Expression
         if(Pattern.matches(regex,s)) return true;
         else return false;
     }
+    boolean GUID_Check(String s)
+    {
+        String regex = "^([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12})$";
+        if(Pattern.matches(regex,s)) return true;
+        else return false;
+    }
 }
