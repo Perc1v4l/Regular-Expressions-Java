@@ -21,4 +21,10 @@ public class Regular_Expression
         if(Pattern.matches(regex,s)) return true;
         else return false;
     }
+    boolean pass_is_diff(String s)
+    {
+        String regex = "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[0-9A-Za-z_]{8,}";
+        if(Pattern.matches(regex,s)) return true;
+        else return false;
+    }
 }
