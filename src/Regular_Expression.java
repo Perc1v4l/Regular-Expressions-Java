@@ -15,4 +15,10 @@ public class Regular_Expression
         if(Pattern.matches(regex,s)) return true;
         else return false;
     }
+    boolean url_Check(String s)
+    {
+        String regex = "^(https?\\:\\/\\/)?(\\w+\\.)*[0-9A-Za-z][0-9A-Za-z]+\\.\\w{1,3}(\\:\\d+)?((\\/\\w+)+\\.\\w+)?(\\?\\w+=\\w+(&\\w+=\\w+)*)?(\\#\\w+)?$";
+        if(Pattern.matches(regex,s)) return true;
+        else return false;
+    }
 }
