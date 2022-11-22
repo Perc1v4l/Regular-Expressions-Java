@@ -45,4 +45,21 @@ private Regular_Expression reg;
         Assert.assertFalse(reg.GUID_Check("e02fd0e4-00fd-0930A-ca30-0d00a0038ba0"));
         Assert.assertFalse(reg.GUID_Check("e02fd0e4-00fd-090A-ca430-0d00a02038ba0"));
     }
+    @Test
+    public void url()
+    {
+        Assert.assertTrue(reg.url_Check("http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument"));
+        Assert.assertTrue(reg.url_Check("http://www.example.com"));
+        Assert.assertTrue(reg.url_Check("http://example.com"));
+        Assert.assertTrue(reg.url_Check("http://example.com:8080"));
+        Assert.assertTrue(reg.url_Check("http://example.com"));
+        Assert.assertTrue(reg.url_Check("developer.mozilla.org/ru/search.jpg?q=URL"));
+
+        Assert.assertFalse(reg.url_Check("Just text"));
+        Assert.assertFalse(reg.url_Check("http://a.com"));
+        Assert.assertFalse(reg.url_Check("http://aads-.com"));
+        Assert.assertFalse(reg.url_Check("http://-asda.com"));
+        Assert.assertFalse(reg.url_Check("http://asd_sdas.com"));
+        Assert.assertFalse(reg.url_Check("http://adsa dsa.com"));
+    }
 }
